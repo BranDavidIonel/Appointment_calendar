@@ -16,8 +16,8 @@ class CreateIntervalsTable extends Migration
         Schema::create('intervals', function (Blueprint $table) {
             $table->id();
             $table->tinyInteger('day');
-            $table->timestamp('begin_date')->nullable();
-            $table->timestamp('end_date')->nullable();
+            $table->string('begin_hour',8)->nullable();
+            $table->string('end_hour',8)->nullable();
             $table->timestamps();
         });
     }
