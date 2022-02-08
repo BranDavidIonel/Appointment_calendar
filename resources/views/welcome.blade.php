@@ -42,7 +42,7 @@
     <script>
         //$('#datepicker').datepicker();
         $('#datetime').datetimepicker({
-            format: 'YY-MM-DD hh'
+            format: 'YY-MM-DD hh:mm'
         });
     </script>
 

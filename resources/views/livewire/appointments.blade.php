@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-6 border-container">
             <h2>New Appointment</h2>
-            <form   wire:submit="submit(Object.fromEntries(new FormData($event.target)))">
+            <form   wire:submit.prevent="submit(Object.fromEntries(new FormData($event.target)))">
                 <div class="form-group">
                     <label for="Name">Name</label>
                     <input wire:model="new_appointment.name" name="name" type="text" class="form-control" id="NameInput" placeholder="name..">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group"  >
                     <label for="DateInput">Date</label>
-                    <input name="date" class="form-control" type="text" id="datetime" value="{{$new_appointment->date}}">
+                    <input  wire:model="new_appointment.date" name="date" class="form-control" type="text" id="datetime">
                     @error('new_appointment.date') <span class="text-danger">{{ $message }}</span> @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
